@@ -19,19 +19,17 @@ module.exports = require('express').Router()
 
   .post('/emoji/:name/comments',
         require('body-parser').json(),
-        (req, res, next) => {
+        async (req, res, next) => {
     // Find or create a user
     const {name, text} = req.body
-    const user = User.findOrCreate({where: {name}})
-      .then(([user]) => user)
-      .then(user =>
-        Comment.create({
-          userId: user.id,
-          emojiId: req.emoji.id,
-          text,
-        }))
-      .then(c => res.send(c))
-      .catch(next)
+    const user = await User.findOrCreate({where: {name}})
+                         .then(([user]) => user)
+    const comment = await Comment.create({
+      userId: user.id,
+      emojiId: req.emoji.id,
+      text,
+    })
+    res.send(comment)
   })
     
   .get('/emoji/:name/comments', (req, res, next) =>
