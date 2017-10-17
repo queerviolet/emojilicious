@@ -5,6 +5,7 @@ module.exports = {
     publicPath: '/assets/',    
   },
   devtool: 'inline-source-map',
+  resolve: {extensions: ['.jsx', '.js', '.json']},
   module: {
     rules: [{
       test: /jsx?$/,

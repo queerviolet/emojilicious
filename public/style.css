@@ -1,0 +1,12 @@
+.emojis {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0; padding: 0;
+  justify-content: center;
+}
+
+.emojis-item {
+  font-size: 64pt;
+  margin: 10px;
+}
