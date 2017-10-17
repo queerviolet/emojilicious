@@ -3,10 +3,25 @@
   display: flex;
   flex-flow: row wrap;
   margin: 0; padding: 0;
-  justify-content: center;
+  justify-content: center;  
 }
 
 .emojis-item {
   font-size: 64pt;
   margin: 10px;
+  transition: transform 113ms;
+}
+
+.emojis-item:hover {
+  animation-name: psychedelic;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+
+  transform: scale(2);
+}
+
+@keyframes psychedelic {
+  0% { filter: hue-rotate(0deg) }
+  50% { filter: hue-rotate(180deg) }
+  100% { filter: hue-rotate(360deg) }
 }
