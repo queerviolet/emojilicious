@@ -1,0 +1,22 @@
+- Page that displays (all) emoji
+  - (maybe) Sort & filter?
+- (Users) Reaction on emoji (with emoji)
+
+  ---
+
+# Backend:
+  [ ] A list of emoji: require('gemoji')
+  [ ] Seed a database with that.
+  [ ] ROUTES
+    - /api
+      - GET /emoji - Lists all emoji
+      - GET /emoji/:name - Gets a specific emoji (maybe)
+      - POST /emoji/comments (user: String)
+      - GET /emoji/comments
+
+
+# Frontend
+  [ ] Store that can keep some emoji in it
+  [ ] Views to display everything
+  [ ] Simple commenting form.  
+  [ ] (maybe) Frontend routes
